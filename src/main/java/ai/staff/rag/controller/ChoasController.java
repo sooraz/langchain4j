@@ -32,7 +32,7 @@ public class ChoasController {
         this.model = OpenAiChatModel.builder()
                 .baseUrl("http://localhost:12434/v1")
                 .apiKey("docker") // local ki emaina ok
-                .modelName("docker.io/ai/deepseek-r1-distill-llama:latest") // exact id pettu
+                .modelName("docker.io/ai/deepseek-r1-distill-llama:latest")
                 .timeout(Duration.ofSeconds(120))
                 .temperature(0.1) // R1 reasoning model ki low temp better
                 .logRequests(true)
