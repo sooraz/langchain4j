@@ -20,9 +20,20 @@ management:
   metrics:
     tags:
       application: ${spring.application.name}
+      
+langchain4j:
+  tavily:
+    api-key: ${TAVILY_SECRET}  # key ikkada
+    
+chatModel:
+  baseURL: ${AI_URL}
+  model: ${MODEL}
+  temperature: 0.7
+  apiKey: ${API_KEY_MODEL}
+  timeout: 120
 
 logging:
   level:
     root: INFO
-    dev.langchain4j: DEBUG
+    dev.langchain4j: TRACE
     ai.staff.rag: DEBUG

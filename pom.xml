@@ -38,6 +38,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webmvc</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>dev.langchain4j</groupId>
+			<artifactId>langchain4j-web-search-engine-tavily</artifactId>
+			<version>0.35.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>dev.langchain4j</groupId>
@@ -70,15 +75,15 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-    <groupId>dev.langchain4j</groupId>
-    <artifactId>langchain4j-document-parser-apache-pdfbox</artifactId>
-    <version>0.35.0</version>
-</dependency>
-<dependency>
-    <groupId>dev.langchain4j</groupId>
-    <artifactId>langchain4j-embeddings-all-minilm-l6-v2</artifactId>
-    <version>0.35.0</version>
-</dependency>
+			<groupId>dev.langchain4j</groupId>
+			<artifactId>langchain4j-document-parser-apache-pdfbox</artifactId>
+			<version>0.35.0</version>
+		</dependency>
+		<dependency>
+			<groupId>dev.langchain4j</groupId>
+			<artifactId>langchain4j-embeddings-all-minilm-l6-v2</artifactId>
+			<version>0.35.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
