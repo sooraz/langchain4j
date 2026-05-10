@@ -50,27 +50,27 @@ public class RagService {
                 .contentRetriever(contentRetriever)
                 .build();
         
-        System.out.println("RAG Service v2 initialized: DeepSeek + Local Embeddings + ContentRetriever");
+        log.info("RAG Service v2 initialized: DeepSeek + Local Embeddings + ContentRetriever");
     }
 
     public void ingestPdf(MultipartFile file) throws IOException {
-        System.out.println("INGEST_START: file={}"+ file.getOriginalFilename());
+        log.info("INGEST_START: file={}"+ file.getOriginalFilename());
         var parser = new ApachePdfBoxDocumentParser();
         Document doc = parser.parse(file.getInputStream());
         
         var splitter = DocumentSplitters.recursive(300, 30);
         var segments = splitter.split(doc);
-        System.out.println("INGEST_CHUNKS: created {} segments"+ segments.size());
+        log.info("INGEST_CHUNKS: created {} segments"+ segments.size());
         
         var embeddings = embeddingModel.embedAll(segments).content();
         embeddingStore.addAll(embeddings, segments);
-        System.out.println("INGEST_SUCCESS: stored {} embeddings"+ embeddings.size());
+        log.info("INGEST_SUCCESS: stored {} embeddings"+ embeddings.size());
     }
 
     public String ask(String question) {
-        System.out.println("RAG_QUERY: {}"+ question);
+        log.info("RAG_QUERY: {}"+ question);
         String answer = assistant.chat(question);
-        System.out.println("RAG_ANSWER: generated response");
+        log.info("RAG_ANSWER: generated response");
         return answer;
     }
 }

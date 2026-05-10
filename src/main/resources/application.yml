@@ -25,4 +25,4 @@ logging:
   level:
     root: INFO
     dev.langchain4j: DEBUG
-    com.ragchaos: DEBUG
+    ai.staff.rag: DEBUG

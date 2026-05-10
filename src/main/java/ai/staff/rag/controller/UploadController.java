@@ -25,6 +25,6 @@ public class UploadController {
 
     @PostMapping("/chat/ask")
     public String ask(@RequestBody String question) {
-        return ragService.ask(question); // Old /chat/ask replace chey idi tho
+        return ragService.ask(question); 
     }
 }
